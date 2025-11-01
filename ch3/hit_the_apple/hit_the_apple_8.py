@@ -24,6 +24,7 @@ apple = Actor("apple")
 apple.pos = (randint(10, WIDTH - 10), randint(10, HEIGHT - 10))
 apple.dx = choice([-3, -2, -1, 1, 2, 3])
 apple.dy = choice([-3, -2, -1, 1, 2, 3])
+apple.angle = 0  # start rotation
 
 # ─── Rules text ────────────────────────
 rules_text = """
@@ -87,7 +88,7 @@ def move_apple():
         apple.dy *= -1
         
     # Rotate the apple
-    
+    apple.angle = (apple.angle + 5) % 360  # rotates clockwise 5 degrees per frame
 
 # ─── Update Loop ───────────────────────
 def update():
