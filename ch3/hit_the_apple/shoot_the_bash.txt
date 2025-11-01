@@ -1,0 +1,20 @@
+import pgzrun
+from random import randint
+
+WIDTH = 800
+HEIGHT = 600
+unnamed (1) = Actor("unnamed (1)")
+
+def draw():
+    screen.clear()
+    unnamed (1).pos = (randint(10, 800), randint(10, 600))  # Set random position for the unnamed(1)
+    unnamed (1).draw()
+
+def on_mouse_down(pos):
+    if unnamed (1).collidepoint(pos):
+        print("no!")
+    else:
+        print("the thing got his revenge mwaha ha ha ha!")
+        quit() # leaves screen open; no difference
+
+pgzrun.go()
